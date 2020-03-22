@@ -1,4 +1,6 @@
-# HackAstatus
+# The Online Marketplace
+
+For more information see: https://devpost.com/software/0017_supermarkt-status_the-online-marketplace
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
