@@ -4,7 +4,7 @@ const path = require('path');
 const mongo = require('mongoose');
 const app = express();
 
-// const users  = require('./routes/users');
+const shops  = require('./routes/shops');
 // const cors = require('cors');
 
 // Connecting to the prod database -- for local db: mongodb://localhost:27017/local
@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/static/index.html'));
 });
+app.use('/api/shops', shops);
 
 const port = process.env.PORT || 5000;
 

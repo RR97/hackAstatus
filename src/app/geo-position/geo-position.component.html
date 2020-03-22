@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Wähle deinen Supermarkt aus</h1>
+  <input class="form-control" id="listSearch" type="text" placeholder="Type something to search list items">
+  <br>
+  <ul class="list-group" id="myList" *ngFor="let item of items">
+    <li class="list-group-item" (click)="selectShop(item.name)">{{item.name}}</li>
+  </ul>
+</div>

@@ -6,15 +6,18 @@ import { ShopProduktComponent } from './shop-produkt/shop-produkt.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NeuerShopComponent } from './neuer-shop/neuer-shop.component';
 import { OverviewShoperComponent } from './overview-shoper/overview-shoper.component';
-import { OrdersComponent } from './orders/orders.component';
-import { ProductsComponent } from './products/products.component';
+import { GeoPositionComponent } from './geo-position/geo-position.component';
+import { OverviewBuyerComponent } from './overview-buyer/overview-buyer.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'newShop', component: NeuerShopComponent },
   { path: 'overviewShoper', component: OverviewShoperComponent },
+  { path: 'overviewBuyer', component: OverviewBuyerComponent },
   { path: 'newProduct', component: ShopProduktComponent },
-  { path: 'orders', component: OrdersComponent },
   { path: 'home', component: AppComponent },
+  { path: 'chooseShop', component: GeoPositionComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
@@ -24,13 +27,15 @@ const appRoutes: Routes = [
     ShopProduktComponent,
     NeuerShopComponent,
     OverviewShoperComponent,
-    OrdersComponent,
-    ProductsComponent
+    GeoPositionComponent,
+    OverviewBuyerComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,9 @@
 <router-outlet></router-outlet>
-<div class="text-center">Shop:</div>
+<div class="text-center">Shop: {{shopName}}</div>
 <div class="h-100 row align-items-center">
   <div class="col text-center">
     <button (click)="setView('products')" type="button" class="btn btn-lg btn-primary space">Produkte</button>
-    <button (click)="setView('orders')" class="btn btn-lg btn-primary space">Bestellungen</button>
-    <button (click)="setView('suppliers')" class="btn btn-lg btn-primary">Lieferanten</button>
+    <button (click)="setView('orders')" class="btn btn-lg btn-primary space">Meine Bestellungen</button>
     <div class="container top" *ngIf="view === 'products'">
       <div class="d-inline-flex" *ngFor="let item of items">
         <div class="card" style="width: 18rem; margin-right: 10px">
@@ -18,12 +17,9 @@
           </ul>
         </div>
       </div>
-      <div class="container top">
-        <button routerLink="/" class="btn btn-lg btn-secondary">Produkt hinzufügen</button>
-      </div>
     </div>
     <div class="container" *ngIf="view === 'orders'">
-      <h1 class="top">Bestellungen</h1>
+      <h1 class="top">Meine Bestellungen</h1>
     </div>
   </div>
 </div>
