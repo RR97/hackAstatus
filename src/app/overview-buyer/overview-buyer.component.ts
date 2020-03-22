@@ -14,7 +14,10 @@ export class OverviewBuyerComponent implements OnInit {
 
   ngOnInit() {
     this.view = '';
-    this.items = [{title: 'Eier'}, {title: 'Brot'}, {title: 'Zucker'}];
+    this.items = [
+      {title: 'Eier', img: './assets/eier.jfif'},
+      {title: 'Brot', img: './assets/brot.jpg'},
+      {title: 'Zucker', img: './assets/zucker.jpg'}];
     this.shopName = localStorage.getItem('shop');
   }
 

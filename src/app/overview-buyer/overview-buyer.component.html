@@ -1,19 +1,20 @@
 <router-outlet></router-outlet>
-<div class="text-center">Shop: {{shopName}}</div>
+<div class="text-center" style="color: white">Supermarkt: {{shopName}}</div>
 <div class="h-100 row align-items-center">
   <div class="col text-center">
+    <button routerLink="/chooseShop" type="button" class="btn btn-lg btn-primary space">Supermärkte</button>
     <button (click)="setView('products')" type="button" class="btn btn-lg btn-primary space">Produkte</button>
-    <button (click)="setView('orders')" class="btn btn-lg btn-primary space">Meine Bestellungen</button>
+    <button (click)="setView('orders')" class="btn btn-lg btn-primary">Meine Bestellungen</button>
     <div class="container top" *ngIf="view === 'products'">
       <div class="d-inline-flex" *ngFor="let item of items">
         <div class="card" style="width: 18rem; margin-right: 10px">
-          <img class="card-img-top" src="..." alt="Card image cap">
+          <img class="card-img-top" src="{{item.img}}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{item.title}}</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">...</li>
           </ul>
         </div>
       </div>

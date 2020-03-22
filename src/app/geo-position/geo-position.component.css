@@ -1,0 +1,6 @@
+.box {
+  background: rgba(253, 233, 203, 0.8);
+  border-radius: 5%;
+  max-width: 65%;
+  padding: 25px;
+}

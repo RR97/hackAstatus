@@ -2,7 +2,7 @@ const express = require('express');
 let router = express.Router();
 
 const mongoose = require('mongoose');
-require('../models/Shop');
+require('../models/shop');
 const Shop = mongoose.model('shops');
 
 router.post('/create', async (req, res) => {
@@ -12,4 +12,13 @@ router.post('/create', async (req, res) => {
   });
 });
 
-router.get('');
+router.get('/all', async (req, res) => {
+  Shop.find({}, function (err, shops) {
+    if (err) {
+      res.send("Something went wrong! " + err)
+    }
+    res.json(shops);
+  });
+});
+
+module.exports = router;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ShopActions} from '../services/shop.actions';
+import {ShopCreate} from '../services/shop.create';
 import { FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 
@@ -12,7 +12,7 @@ export class NeuerShopComponent implements OnInit {
   shopForm: FormGroup;
 
   constructor(private router: Router,
-              private shopAction: ShopActions,
+              private shopAction: ShopCreate,
               private formBuilder: FormBuilder) {
   }
 
@@ -30,9 +30,8 @@ export class NeuerShopComponent implements OnInit {
 
   onSubmit() {
     this.shopAction.createShop(this.shopForm.value)
-      .subscribe(data => {
-        this.router.navigate(['/overviewShoper']);
-      });
+      .subscribe(data => {});
+    this.router.navigate(['/overviewShoper']);
   }
 
 
